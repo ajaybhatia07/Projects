@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Traineer</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />-->
+
+	<link rel = 'stylesheet' href = "{% static 'css/main.css' %}">
+	<link rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Themify Icons-->
+	<link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.min.css' %}">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	</head>
+	<body>
+		
+	<div class="gtco-loader"></div>
+	
+
+	
+	<!-- <div class="page-inner"> -->
+	<nav class="gtco-nav bg-dark" role="navigation">
+		<div class="gtco-container">
+			
+			<div class="row">
+				<div class="col-sm-4 col-xs-12">
+					<div id="gtco-logo"><a href="{% url 'home' %}">Traineer<em>.</em></a></div>
+				</div>
+				<div class="col-xs-8 text-right menu-1">
+					<ul>
+						{% if user.is_authenticated %}
+						<li><img style = 'width:40px; height:40px' src="{{ request.user.profile.image.url }}" class="rounded-circle account-img">
+              			<span class="sty" id = 'profile-name' style="color:white ;font-size:17px;">Welcome: {{request.user}}</span></li>
+						<li><a href="{% url 'ticketbook' %}">Book Ticket</a></li>
+						<li><a href="{% url 'cancel' %}">Cancel Ticket</a></li>
+						<li><a href="{% url 'booking_history' %}">Booking History</a></li>
+						<li><a href="{% url 'profile' %}">Profile</a></li>
+						<li style = 'position:absolute;margin-left:10px;margin-top:4px'><a href="{% url 'logout' %}">Logout</a></li>
+						{% else %}
+						<li><a href="{% url 'login' %}">Login</a></li>
+				
+						
+						<li id = 'register'><a id = 'register' href="{% url 'register' %}">Register</a></li>
+						{% endif %}
+					</ul>	
+				</div>
+			</div>
+			
+		</div>
+	</nav>
+	{% block content %}
+	{% endblock %}
+	<footer id="gtco-footer" role="contentinfo">
+		<div class="gtco-container">
+			<div class="row row-p	b-md">
+
+				<div class="col-md-4">
+					<div class="gtco-widget">
+						<h3>About Us</h3>
+						<p>Traineer is a “Mini Ratna (Category-I)” Central Public Sector Enterprise under Ministry of Railways, Government of India. Traineer is fully subscribed by Ministry of Railways, Government of India. It’s registered and Corporate Office is situated at Chandigarh.</p>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-md-push-1">
+					<div class="gtco-widget">
+						<h3>General Information</h3>
+						<ul class="gtco-footer-links">
+							<li><a href="#">FAQs</a></li>
+							<li><a href="#">Terms and Conditions</a></li>
+							<li><a href="#">Bank Transaction Charges</a></li>
+							<li><a href="#">Current Booking Guidelines</a></li>
+							<li><a href="#">More Info</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-md-push-1">
+					<div class="gtco-widget">
+						<h3>Refund Rules</h3>
+						<ul class="gtco-footer-links">
+							<li><a href="#">Cancellation of Ticket and Refund Rules 2015 w.e.f 12-Nov-2015</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-md-push-1">
+					<div class="gtco-widget">
+						<h3>Get In Touch</h3>
+						<ul class="gtco-quick-contact">
+							<li><a href="#"><i class="icon-phone"></i> +91 1234567890</a></li>
+							<li><a href="#"><i class="icon-mail2"></i>xyz@gmail.com</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12">
+					<p class="pull-left">
+						<small class="block">&copy; Nidus Technologies. All Rights Reserved.</small> 
+						<small class="block">Designed by Ajay Bhatia</small>
+					</p>
+					<p class="pull-right">
+						<ul class="gtco-social-icons pull-right">
+							<li><a href="https://twitter.com/?lang=en"><i class="icon-twitter"></i></a></li>
+							<li><a href="https://en-gb.facebook.com/"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://in.linkedin.com/"><i class="icon-linkedin"></i></a></li>
+							<li><a href="https://www.instagram.com/?hl=en"><i class="icon-instagram"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+  <!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- countTo -->
+	<script src="{% static 'js/jquery.countTo.js' %}"></script>
+
+	<!-- Stellar Parallax -->
+	<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+
+	<!-- Magnific Popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/magnific-popup-options.js' %}"></script>
+	
+	<!-- Datepicker -->
+	<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+	
+
+	<!-- Main -->
+	<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
+

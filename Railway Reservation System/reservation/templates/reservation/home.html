@@ -1,0 +1,126 @@
+{% extends 'reservation/base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+              {% for message in messages %}
+                 <div class ="alert alert-{{message.tags}}">
+                 {{ message }}
+                 </div>
+                 {% endfor %}
+                 {% endif %}
+<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(static/images/train2.jpg)">
+    <div class="overlay"></div>
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0 text-left">
+                <div class="row row-mt-15em">
+                    <div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
+                        <h1>Safety | Security | Punctuality</h1>	
+                    </div>
+                        </div>
+                    </div>
+                </div>
+                        
+                
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="gtco-section">
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+                <h2>Holidays</h2>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="{% static 'images/exterior.jpg' %}" class="fh5co-card-item image-popup">
+                    <figure>
+                        <div class="overlay"><i class="ti-plus"></i></div>
+                        <img src="{% static 'images/exterior.jpg' %}" alt="Image" class="img-responsive">
+                    </figure>
+                    <div class="fh5co-text">
+                        <h2>Maharaja's Express</h2>
+                        <p>Redefining Royalty, Luxury and Comfort, Maharaja’s express takes you on a sojourn to the era of bygone stately splendour of princely states. Sylvan furnishings, elegant ambience and modern amenities are amalgamated for an “Experience Unsurpassed”. It has been a winner of “World’s Leading Luxury train” by World Travel Awards consecutively for last six years.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="{% static 'images/Buddha_Banner.jpg' %}" class="fh5co-card-item image-popup">
+                    <figure>
+                        <div class="overlay"><i class="ti-plus"></i></div>
+                        <img src="{% static 'images/Buddha_Banner.jpg' %}" alt="Image" class="img-responsive">
+                    </figure>
+                    <div class="fh5co-text">
+                        <h2>Buddhist Circuit Tourist Train</h2>
+                        <p>India, the country where Buddhism originated has rich memories of the Buddhist legacy. As part of its drive towards austerity, the only kind of art & architecture that it supported were Stupas, Chaityas & Viharas. Buddhist Train India will help you visit all these places up close for a truly religious experience.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <a href="{% static 'images/Manali.jpg' %}" class="fh5co-card-item image-popup">
+                    <figure>
+                        <div class="overlay"><i class="ti-plus"></i></div>
+                        <img src="{% static 'images/Manali.jpg' %}" alt="Image" class="img-responsive">
+                    </figure>
+                    <div class="fh5co-text">
+                        <h2>Rail Tour Packages</h2>
+                        <p>Traineer offers Exclusive Rail tour packages with confirmed train tickets, sight-seeing and meals for enchanting Nilgiri Mountains, Darjeeling, Kullu Manali, Kashmir, Gangtok or divine tours of Mata Vaishno Devi, Rameswaram, Madurai, Shirdi, Tirupati etc. Holiday packages/ Land packages to these destinations are also available.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="gtco-features">
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+                <h2>How It Works</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                    <span class="icon">
+                        <i>1</i>
+                    </span>
+                    <h3>Search and Select Train</h3>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                    <span class="icon">
+                        <i>2</i>
+                    </span>
+                    <h3>Enter Passenger Information</h3>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="feature-center animate-box" data-animate-effect="fadeIn">
+                    <span class="icon">
+                        <i>3</i>
+                    </span>
+                    <h3>Confirm Details and Book Tickets</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="gtco-cover gtco-cover-sm" style="background-image: url(static/images/train1.jpg)"  data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="gtco-container text-center">
+        <div class="display-t">
+            <div class="display-tc">
+                <h1>We have high quality services that you will surely love!</h1>
+            </div>	
+        </div>
+    </div>
+</div>
+{% endblock %}
