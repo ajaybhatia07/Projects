@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">        
+            <small class="text-muted">
+                Already Have An Account? <a href="{% url 'login' %}" class="ml-2">Login Again</a>
+            </small>       
+    </div>
+{% endblock %}
