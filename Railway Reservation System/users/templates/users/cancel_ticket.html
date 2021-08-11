@@ -1,0 +1,43 @@
+{% extends 'reservation/base.html' %}
+{% block content %}
+<div style="margin-top: 100px;">
+    {% if messages %}
+    {% for message in messages %}
+                 <center><div class ="alert alert-{{message.tags}}">
+                 {{ message }}
+                 </div></center>
+                 {% endfor %}
+                 {% endif %}
+    <center><h2>  Current Reservations </h2></center>
+    {%csrf_token%}
+    <table class="table table-striped" style="width: 90%;margin-left:75px ;margin-top: 30px;">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">PNR Number</th>
+                <th scope="col">Date</th>
+                <th scope="col">Train Number</th>
+                <th scope="col">Train Name</th>
+                <th scope="col">Source Station</th>
+                <th scope="col">Destination Station</th>
+                <th scope="col">No. of Seats</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in reservations %}
+            
+            <tr>
+                <td>{{ p.pnr }}</td>
+                <td>{{ p.date }}</td>
+                <td>{{ p.train_number }}</td>
+                <td>{{ p.train_name }}</td>
+                <td>{{ p.source }}</td>
+                <td>{{ p.destination }}</td>
+                <td>{{ p.number_of_seats }}</td>
+                <td><a href = "{% url 'cancel_reservation' p.pnr %}"><button class='btn btn-danger' value="{{p.pnr}}" type="submit">Cancel</button></a></td>
+            </tr>
+            
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

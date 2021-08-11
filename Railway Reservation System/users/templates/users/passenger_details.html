@@ -1,0 +1,12 @@
+{% extends 'reservation/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div style="margin-top: 100px;" class = 'container' id = 'passenger'>
+    <center><h2>Passenger Information</h2></center>
+    <form method="post">
+    	{% csrf_token %}
+        {{ form|crispy }}
+        <center><a href="{% url 'payment' %}"><button class='btn btn-primary'>Pay</button></a></center>
+    </form>
+</div>
+{% endblock %}

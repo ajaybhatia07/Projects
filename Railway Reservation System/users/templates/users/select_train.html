@@ -1,0 +1,43 @@
+{% extends "reservation/base.html" %}
+
+{% block content %}
+<div style="margin-top: 100px;">
+    <center><h2>  Select Train </h2></center>
+
+    <table class="table table-striped" style="width: 90%;margin-left:75px ;margin-top: 30px;">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Train Number</th>
+                <th scope="col">Train Name</th>
+                <th scope="col">Source Station</th>
+                <th scope="col">Destination Station</th>
+                <th scope="col">Arrival Time</th>
+                <th scope="col">Departure Time</th>
+                <th scope="col">Seats Available</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if trains %}
+            {% for p in trains %}
+            
+            <tr>
+                <td>{{p.train_number}}</a></td>
+                <td>{{p.train_name}}</td>
+                <td>{{p.source}}</td>
+                <td>{{p.destination}}</td>
+                <td>{{p.arrival}}</td>
+                <td>{{p.departure}}</td>
+                <td>{{p.booked_class}}</td>
+                
+                <td><a href="{% url 'passenger' p.train_number %}"><button class='btn btn-primary'>Book Ticket</button></a></td>
+            </tr>
+            
+            {% endfor %}
+        
+        </tbody>
+    </table>  
+    {% else %}
+        <center><h3>Train not found or seat not available for selected class on this Route.</h3></center>
+        {% endif %} 
+</div>
+{% endblock %} 

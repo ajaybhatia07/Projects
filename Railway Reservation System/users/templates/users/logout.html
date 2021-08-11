@@ -1,0 +1,9 @@
+{% extends 'reservation/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section" style = 'margin-top:100px'>        
+            <center><h2><small class="text-muted">
+                Already Have An Account? <a href="{% url 'login' %}" class="ml-2">Login Again</a>
+            </small></h2></center>       
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "reservation/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container py-5" style="margin-top: 100px;" id = 'booking'>
+	<center><h3>Book Ticket</h3></center>
+	<form method="post">
+    	{% csrf_token %}
+        {{ form|crispy }}
+        <center><a href="{% url 'train' %}"><button class="btn btn-primary">Search</button></a></center>
+    </form>
+</div>
+{% endblock %}
